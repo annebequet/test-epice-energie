@@ -7,7 +7,16 @@ const LinkButton: React.FC<LinkButtonProps> = (props) => {
   return (
     <a
       href={link}
-      className="flex items-center space-x-2 bg-custom-blue hover:bg-custom-dark-blue text-gray-100 px-4 py-2 mt-6 rounded"
+      className="
+        flex
+        items-center
+        space-x-2
+        bg-custom-blue
+        hover:bg-custom-dark-blue
+        text-gray-100
+        px-4 py-2
+        mt-6 rounded
+      "
     >
       {text}
     </a>

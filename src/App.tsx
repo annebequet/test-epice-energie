@@ -1,12 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import NotFound from "./components/NotFound";
+import NotFound from "./pages/NotFound";
+import HomeContainer from "./pages/Home/HomeContainer";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <HomeContainer />,
     errorElement: <NotFound />,
   },
 ]);

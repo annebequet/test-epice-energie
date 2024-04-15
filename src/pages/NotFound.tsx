@@ -1,10 +1,10 @@
 import React from "react";
 
-import LinkButton from "./Buttons/LinkButton";
-import ShadowBox from "./Layout/ShadowBox";
-import Subtitle from "./Text/Subtitle";
-import Title from "./Text/Title";
-import BasicLayout from "./Layout/BasicLayout";
+import LinkButton from "../components/Buttons/LinkButton";
+import ShadowBox from "../components/Layout/ShadowBox";
+import Subtitle from "../components/Text/Subtitle";
+import Title from "../components/Text/Title";
+import BasicLayout from "../components/Layout/BasicLayout";
 
 
 const NotFound: React.FC = () => {
