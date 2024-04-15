@@ -12,9 +12,9 @@ export default {
             "dancing-script": ["Dancing Script", "cursive"],
         },
         colors: {
-            "custom-blue-light": "#DCF2F1",
+            "custom-light-blue": "#DCF2F1",
             "custom-blue": "#365486",
-            "custom-blue-dark": "0F1035",
+            "custom-dark-blue": "#0F1035",
         },
     },
 },
