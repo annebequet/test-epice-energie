@@ -14,13 +14,13 @@ const Dropdown: React.FC<DropdownType> = (props) => {
         rounded-lg
         shadow
         w-44
-        dark:bg-gray-700
         flex
         flex-col
+        mb-3
       `}
     >
       <select
-        className="py-2 p-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+        className="py-2 p-2 text-sm text-gray-700 cursor-pointer bg-white"
         onChange={handleChange}
         value={menuSelected}
       >
