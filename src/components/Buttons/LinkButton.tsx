@@ -1,8 +1,7 @@
-import { LinkButtonProps } from "./types";
-
+import { LinkButtonProps } from './types'
 
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
-    const { link, text } = props;
+  const { link, text } = props
 
   return (
     <a
@@ -23,4 +22,4 @@ const LinkButton: React.FC<LinkButtonProps> = (props) => {
   )
 }
 
-export default LinkButton;
+export default LinkButton
