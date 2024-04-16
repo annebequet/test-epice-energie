@@ -3,11 +3,10 @@ import React from 'react';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import DayPickDropdown from '../../features/sites/DayPickDropdown';
 import BasicLayout from '../../components/Layout/BasicLayout';
-import ShadowBox from '../../components/Layout/ShadowBox';
-import Subtitle from '../../components/Text/Subtitle';
 import CardData from '../../components/Card/Card';
 import Eye from '../../components/Icons/Eye';
 import { CardDataProps } from '../../components/Card/types';
+import Details from '../../features/sites/Details';
 
 
 const HomeView: React.FC = () => {
@@ -48,8 +47,8 @@ const HomeView: React.FC = () => {
       total: '15',
       children: <Eye />
     },
-  ]
-
+  ];
+  
   return (
     <BasicLayout>
       <Breadcrumb breadcrumbs={breadcrumbs} />
@@ -63,11 +62,7 @@ const HomeView: React.FC = () => {
             </div>
           ))}
         </div>
-        <ShadowBox>
-          <div>
-            <Subtitle subtitle="Suivi du site patate" />
-          </div>
-        </ShadowBox>
+        <Details />
       </div>
     </BasicLayout>
   )

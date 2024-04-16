@@ -23,6 +23,7 @@ const Breadcrumb: React.FC<BreadcrumbPropsType> = ({ breadcrumbs }) => {
           md:space-x-2
           rtl:space-x-reverse 
           sm:mb-0
+          items-baseline
         "
       >
         {breadcrumbs.map(
@@ -35,7 +36,13 @@ const Breadcrumb: React.FC<BreadcrumbPropsType> = ({ breadcrumbs }) => {
                     label={breadcrumb.label}
                   />
                   <svg
-                    className="rtl:rotate-180 w-3 h-3 mx-1 text-gray-400"
+                    className="
+                      rtl:rotate-180
+                      w-3
+                      h-3
+                      mx-1
+                      text-custom-light-gray
+                    "
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

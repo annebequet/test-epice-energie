@@ -12,7 +12,7 @@ const LinkButton: React.FC<LinkButtonProps> = (props) => {
         space-x-2
         bg-custom-blue
         hover:bg-custom-dark-blue
-        text-gray-100
+        text-custom-border-gray
         px-4 py-2
         mt-6 rounded
       "

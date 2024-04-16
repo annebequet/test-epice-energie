@@ -20,7 +20,7 @@ const Dropdown: React.FC<DropdownType> = (props) => {
       `}
     >
       <select
-        className="py-2 p-2 text-sm text-gray-700 cursor-pointer bg-white"
+        className="py-2 p-2 text-sm text-custom-gray cursor-pointer bg-white"
         onChange={handleChange}
         value={menuSelected}
       >
@@ -32,9 +32,6 @@ const Dropdown: React.FC<DropdownType> = (props) => {
               block
               px-4
               py-2
-              hover:bg-gray-100
-              dark:hover:bg-gray-600
-              dark:hover:text-white
               cursor-pointer
             "
           >

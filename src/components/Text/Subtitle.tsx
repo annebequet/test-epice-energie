@@ -11,7 +11,7 @@ const Subtitle: React.FC<SubtitleProps> = (props) => {
       text-center
       font-bold
       tracking-wider
-      text-gray-500
+      text-custom-light-gray
       "
     >
       {subtitle}
