@@ -20,7 +20,7 @@ const Dropdown: React.FC<DropdownType> = (props) => {
       `}
     >
       <select
-        className="py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+        className="py-2 p-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
         onChange={handleChange}
         value={menuSelected}
       >

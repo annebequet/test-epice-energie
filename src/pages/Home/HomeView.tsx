@@ -1,37 +1,26 @@
-import React, { useState } from 'react';
-import Dropdown from '../../components/Dropdown/Dropdown';
-
-type Filterstype = {
-  siteId: string,
-}
+import React from 'react';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import DayPickDropdown from '../../features/sites/DayPickDropdown';
 
 const HomeView: React.FC = () => {
-  const [filters, setFilters] = useState<Filterstype>({
-    siteId: '1',
-  });
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilters({ ...filters, ['siteId']: event.target.value })
-  }
-
-  const dropdownMenu = [
+  const breadcrumbs = [
     {
-      id: '1',
-      label: '05/96/2024',
+      label: 'Monitoring des sites',
+      link: '/',
     },
     {
-      id: '2',
-      label: '05/76/2025',
-    },
+      label: 'Jour',
+      component: <DayPickDropdown />
+    }
   ];
 
   return (
-    <Dropdown
-      handleChange={handleChange}
-      dropdownMenu={dropdownMenu}
-      menuSelected={filters.siteId}
-    />
+    <>
+      <Breadcrumb breadcrumbs={breadcrumbs}/>
+    
+    </>
   )
 }
 
-export default HomeView
+export default HomeView;
