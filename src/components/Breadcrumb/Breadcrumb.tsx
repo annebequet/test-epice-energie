@@ -29,7 +29,7 @@ const Breadcrumb: React.FC<BreadcrumbPropsType> = ({ breadcrumbs }) => {
         {breadcrumbs.map(
           (breadcrumb: BreadcrumbType) =>
             (breadcrumb.link && (
-              <li aria-current="page">
+              <li aria-current="page" key={breadcrumb.label}>
                 <div className="flex items-center">
                   <BreadcrumbLink
                     link={breadcrumb.link}
@@ -64,7 +64,7 @@ const Breadcrumb: React.FC<BreadcrumbPropsType> = ({ breadcrumbs }) => {
                 {breadcrumb.component && React.cloneElement(breadcrumb.component)}
               </div>
             )) || (
-              <li>
+              <li  key={breadcrumb.label}>
                 <div className="flex items-center">
                   <BreadcrumbLink
                     link="#"

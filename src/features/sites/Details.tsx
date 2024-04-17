@@ -56,7 +56,10 @@ const Details = () => {
           >
             <tbody>
               {siteDatas.map((siteData: SiteDataType) => (
-                <tr className="bg-white border-b">
+                <tr
+                  className="bg-white border-b"
+                  key={siteData.label}
+                >
                   <th
                     scope="row"
                     className="
