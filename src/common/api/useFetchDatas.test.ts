@@ -14,7 +14,7 @@ describe('useFetchDatas tests', () => {
 
         // hook rendered and result retrieved
         const { result } = renderHook(
-            () => useFetchDatas(mockApiCall)
+            () => useFetchDatas(mockApiCall),
         );
         
         // loading state while promise is processed
@@ -25,7 +25,7 @@ describe('useFetchDatas tests', () => {
           expect(result.current.isLoading).toBe(false);
           expect(result.current.datas).toBe('coucou');
           expect(result.current.error).toBe(null);
-        })
+        });
   });
 
   test(
@@ -33,7 +33,7 @@ describe('useFetchDatas tests', () => {
     async () => {
         const mockFetchFunction = vi.fn().mockRejectedValue(new APIError('oupsie'));
         const { result } = renderHook(
-            () => useFetchDatas(mockFetchFunction)
+            () => useFetchDatas(mockFetchFunction),
         );
 
         expect(result.current.isLoading).toBe(true);
@@ -48,6 +48,6 @@ describe('useFetchDatas tests', () => {
           } else {
             throw new Error('Error was expected but was not thrown');
           }
-        })
+        });
   });
 });

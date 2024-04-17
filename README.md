@@ -59,5 +59,5 @@ npm run dev
 - Uniformiser le système d'appel 'aux APIS' : un hook a été créé pour fetch mais pas pour les promesses chaînées
 - Mettre en place une meilleure gestion des messages d'erreurs (composant dédié et réflexion plus poussée sur le message à afficher)
 - Réflexion à mener sur la classe SiteData
-- config du linter à étoffer
+- config du linter à étoffer et fixer le bug
 - Factoriser les infos liées au statut des sites
