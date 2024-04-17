@@ -1,6 +1,6 @@
 import React from 'react';
-import Dropdown from '../../components/Dropdown/Dropdown';
-import { Site } from './types';
+import Dropdown from '../../../components/Dropdown/Dropdown';
+import { Site } from '../types';
 
 type SitePickDropdownTypeProps = {
   siteId: number,

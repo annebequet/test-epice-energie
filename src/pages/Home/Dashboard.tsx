@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import SiteDetails from '../../features/sites/SiteDetailsContainer';
+import SiteDetails from '../../features/sites/components/SiteDetailsContainer';
 import { Site } from '../../features/sites/types';
-import SitesCardsMainInfos from '../../features/sites/SitesCardsMainInfos';
+import SitesCardsMainInfos from '../../features/sites/components/SitesCardsMainInfos';
 import SiteDataClass, { SiteAndDataType } from '../../features/sites/SiteDatasClass';
 import Spinner from '../../components/Loading/Spinner';
 import Subtitle from '../../components/Text/Subtitle';
@@ -43,11 +43,18 @@ const Dashboard: React.FC<DashboardProps> = (props) => {
 
   return (
     <div>
-      {isLoading && <Spinner />}
-      {error && <Subtitle subtitle={error} />}
-      {sitesDatasForDay && (
+      {isLoading && (
+        <div className="flex justify-center items-center">
+          <Spinner />
+        </div>
+      )}
+      {error && !isLoading && <Subtitle subtitle={error} />}
+      {sitesDatasForDay && !isLoading && (
         <div className="gap-y-10 flex flex-col content-stretch">
-          <SitesCardsMainInfos sites={sites} />
+          <SitesCardsMainInfos
+            sitesProcessor={sitesProcessor}
+            sitesDatasForDay={sitesDatasForDay}
+          />
           <SiteDetails
             sitesProcessor={sitesProcessor}
             sites={sites}

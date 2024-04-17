@@ -34,9 +34,13 @@ const HomeView: React.FC<HomeViewProps> = (props) => {
   return (
     <BasicLayout>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      {isLoading && <Spinner />}
-      {error && <Subtitle subtitle={error.message} />}
-      {sites && <Dashboard sites={sites} day={day} />}
+      {isLoading && (
+        <div className="flex justify-center items-center">
+          <Spinner />
+        </div>
+      )}
+      {error && !isLoading && <Subtitle subtitle={error.message} />}
+      {sites && !isLoading && <Dashboard sites={sites} day={day} />}
     </BasicLayout>
   );
 };

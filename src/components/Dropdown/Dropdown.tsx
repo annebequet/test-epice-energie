@@ -13,7 +13,7 @@ const Dropdown: React.FC<DropdownType> = (props) => {
         divide-gray-100
         rounded-lg
         shadow
-        w-44
+        w-80
         flex
         flex-col
         mb-3

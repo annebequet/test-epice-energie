@@ -1,8 +1,8 @@
-import ShadowBox from '../../components/Layout/ShadowBox';
-import Subtitle from '../../components/Text/Subtitle';
-import SiteClass, { SiteAndDataType } from './SiteDatasClass';
+import ShadowBox from '../../../components/Layout/ShadowBox';
+import Subtitle from '../../../components/Text/Subtitle';
+import SiteClass, { SiteAndDataType } from '../SiteDatasClass';
 import SitePickDropdown from './SitePickDropdown';
-import { Site } from './types';
+import { Site } from '../types';
 
 type SiteDataType = {
   data: string,

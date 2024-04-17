@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Subtitle from '../../components/Text/Subtitle';
-import SiteDataClass, { SiteAndDataType } from './SiteDatasClass';
-import { Site } from './types';
+import Subtitle from '../../../components/Text/Subtitle';
+import SiteDataClass, { SiteAndDataType } from '../SiteDatasClass';
+import { Site } from '../types';
 import SiteDetailsView from './SiteDetailsView';
 
 
