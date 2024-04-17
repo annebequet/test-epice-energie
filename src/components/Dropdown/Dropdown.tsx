@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownType> = (props) => {
         onChange={handleChange}
         value={menuSelected}
       >
-        {dropdownMenu.map((menu: MenuType) => (
+        {dropdownMenu && dropdownMenu.map((menu: MenuType) => (
           <option
             key={menu.id}
             value={menu.id}
@@ -38,6 +38,18 @@ const Dropdown: React.FC<DropdownType> = (props) => {
             {menu.label}
           </option>
         ))}
+        {!dropdownMenu && (
+          <option
+            className="
+              block
+              px-4
+              py-2
+              cursor-pointer
+            "
+          >
+            Pas de site
+          </option>
+        )}
       </select>
     </div>
   )

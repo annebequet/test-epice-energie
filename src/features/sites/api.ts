@@ -1,11 +1,7 @@
 import { fetchData } from "../../common/api/apiInstance";
 import { fetchDataForDay, fetchSites } from "../../data/fetch";
-import { DataPoint, Site } from "./types";
+import { DataPoint, GetSiteDatasPerDayPayload, Site } from "./types";
 
-type GetSiteDatasPerDayPayload = {
-  siteId: number,
-  day: Date,
-}
 
 export default class ApiSites {
     static getSites = async (): Promise<Site[]> =>

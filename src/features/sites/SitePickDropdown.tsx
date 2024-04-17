@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dropdown from '../../components/Dropdown/Dropdown';
+import { Site } from './types';
 
-type Filterstype = {
-  siteId: string,
+type SitePickDropdownTypeProps = {
+  siteId: number,
+  handleSiteChange: Function,
+  sites: Site[],
 }
 
-const SitePickDropdown: React.FC = () => {
-  const [filters, setFilters] = useState<Filterstype>({
-    siteId: '1',
-  });
+const SitePickDropdown: React.FC<SitePickDropdownTypeProps> = (props) => {
+  const { siteId, handleSiteChange, sites } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilters({ ...filters, ['siteId']: event.target.value })
+    handleSiteChange(event.target.value);
   }
 
-  const dropdownMenu = [
+  const dropdownMenu = sites.map((site: Site) => (
     {
-      id: '1',
-      label: 'Site 1',
-    },
-    {
-      id: '2',
-      label: 'Site 2',
-    },
-  ];
+      id: site.id.toString(),
+      label: site.name,
+    }
+  ));
 
   return (
     <Dropdown
         handleChange={handleChange}
         dropdownMenu={dropdownMenu}
-        menuSelected={filters.siteId}
+        menuSelected={siteId.toString()}
     />
   )
 }

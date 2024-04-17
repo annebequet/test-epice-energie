@@ -1,6 +1,5 @@
 export type CardDataProps = {
-    title: string
-    total: string
-    children: JSX.Element
+    title: string,
+    total: string,
   }
   

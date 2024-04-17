@@ -1,22 +1,23 @@
-import ShadowBox from '../../components/Layout/ShadowBox'
-import Subtitle from '../../components/Text/Subtitle'
-import SitePickDropdown from './SitePickDropdown'
+import ShadowBox from '../../components/Layout/ShadowBox';
+import Subtitle from '../../components/Text/Subtitle';
+import SiteClass from './SiteDatasClass';
+import SitePickDropdown from './SitePickDropdown';
+import { Site } from './types';
 
 type SiteDataType = {
-  data: string
-  label: string
+  data: string,
+  label: string,
+};
+
+type SiteDetailViewTypeProps = {
+  site: Site,
+  handleSiteChange: Function,
+  sites: Site[],
+  sitesProcessor: SiteClass
 }
 
-const Details = () => {
-  const site = {
-    id: 1234,
-    name: 'Ferme des Petits Bisons',
-    address: '456 rue de la Grande Montée\n45630 Curry',
-    max_power: 63.54,
-    start_date: new Date(2020, 10, 10),
-    picture: 'https://cdn.stocksnap.io/img-thumbs/960w/old-barn_HD6KC1OP4K.jpg',
-  }
-
+const SiteDetailsView: React.FC<SiteDetailViewTypeProps> = (props) => {
+  const { site, handleSiteChange, sites, sitesProcessor } = props;
   const siteDatas: SiteDataType[] = [
     {
       data: site.address,
@@ -30,13 +31,17 @@ const Details = () => {
       data: site.max_power.toString(),
       label: 'Production max',
     },
-  ]
+  ];
 
   return (
     <ShadowBox>
       <div className="flex justify-between w-full items-baseline">
         <Subtitle subtitle={`Suivi du site ${site.id}`} />
-        <SitePickDropdown />
+        <SitePickDropdown
+            siteId={site.id}
+            handleSiteChange={handleSiteChange}
+            sites={sites}
+        />
       </div>
       <div className="flex gap-x-5 justify-between flex-wrap-reverse md-flex-nowrap">
         <img
@@ -82,7 +87,8 @@ const Details = () => {
         </div>
       </div>
     </ShadowBox>
-  )
-}
+  );
+};
 
-export default Details
+export default SiteDetailsView;
+

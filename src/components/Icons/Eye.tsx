@@ -22,4 +22,4 @@ const Eye: React.FC = () => {
   )
 }
 
-export default Eye
+export default Eye;

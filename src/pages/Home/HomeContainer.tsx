@@ -1,37 +1,27 @@
-import React from "react";
-import HomeView from "./HomeView";
-import ApiSites from "../../features/sites/api";
-import useFetchDatas from "../../common/api/useFetchDatas";
+import React, { useState, } from 'react';
+
+import HomeView from './HomeView';
+import ApiSites from '../../features/sites/api';
+import useFetchDatas from '../../common/api/useFetchDatas';
 
 const HomeContainer: React.FC = () => {
-    const {
-        datas: sites,
-        error: sitesError,
-        isLoading: isSitesLoading,
-    } = useFetchDatas(ApiSites.getSites);
+  const [day, setDay] = useState<Date>(new Date());
 
-    const day = new Date();
+  const {
+    datas: sites,
+    error,
+    isLoading,
+  } = useFetchDatas(ApiSites.getSites);
 
-    const {
-        datas: dayData,
-        error: dayDatasError,
-        isLoading: isDayDatasLoading,
-    } = useFetchDatas(ApiSites.getSiteDatasPerDay(
-        {
-            siteId: 1,
-            day,
-        }
-    ));
-
-    console.log(sites);
-    console.log(sitesError);
-    console.log(isSitesLoading);
-    console.log(dayData);
-
-
-    return (
-        <HomeView />
-    )
+  return (
+    <HomeView
+      sites={sites}
+      isLoading={isLoading}
+      error={error}
+      day={day}
+      setDay={setDay}
+    />
+  )
 }
 
-export default HomeContainer;
+export default HomeContainer

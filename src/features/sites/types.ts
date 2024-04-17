@@ -12,4 +12,10 @@ export type Site = {
     production: number
     reference: number
   }
+
+  export type GetSiteDatasPerDayPayload = {
+    siteId: number,
+    day: Date,
+  }
+  
   
