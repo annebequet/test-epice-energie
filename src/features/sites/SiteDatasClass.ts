@@ -56,10 +56,10 @@ export default class SiteClass {
   }
 
   public getSiteDatas(
-    selectedSiteId: number,
+    selectedSiteId: number | undefined,
     allData: SiteAndDataType[] | null
   ): SiteAndDataType | undefined {
-    if (!allData) return undefined;
+    if (!allData || !selectedSiteId) return undefined;
     const selectedSiteData = allData.find((siteData) => siteData.siteId === selectedSiteId);
     return selectedSiteData;
   }

@@ -1,6 +1,6 @@
 import ShadowBox from '../../components/Layout/ShadowBox';
 import Subtitle from '../../components/Text/Subtitle';
-import SiteClass from './SiteDatasClass';
+import SiteClass, { SiteAndDataType } from './SiteDatasClass';
 import SitePickDropdown from './SitePickDropdown';
 import { Site } from './types';
 
@@ -13,12 +13,23 @@ type SiteDetailViewTypeProps = {
   site: Site,
   handleSiteChange: Function,
   sites: Site[],
-  sitesProcessor: SiteClass
+  sitesProcessor: SiteClass,
+  siteDatas: SiteAndDataType,
 }
 
 const SiteDetailsView: React.FC<SiteDetailViewTypeProps> = (props) => {
-  const { site, handleSiteChange, sites, sitesProcessor } = props;
-  const siteDatas: SiteDataType[] = [
+  const {
+    site,
+    handleSiteChange,
+    sites,
+    sitesProcessor,
+		siteDatas,
+  } = props;
+
+	const siteProduction = sitesProcessor.getSiteProduction(siteDatas);
+	const siteReferenceProd = sitesProcessor.getSiteReferenceProd(siteDatas);
+
+  const gridDatas: SiteDataType[] = [
     {
       data: site.address,
       label: 'Adresse',
@@ -28,8 +39,16 @@ const SiteDetailsView: React.FC<SiteDetailViewTypeProps> = (props) => {
       label: 'Date de création',
     },
     {
-      data: site.max_power.toString(),
-      label: 'Production max',
+      data: siteProduction.toString(),
+      label: 'Production cumulée',
+    },
+    {
+      data: sitesProcessor.getSiteProdRate(siteReferenceProd, siteProduction).toString(),
+      label: 'Taux de production',
+    },
+    {
+      data: sitesProcessor.getSiteStatus(siteDatas),
+      label: 'Statut',
     },
   ];
 
@@ -60,7 +79,7 @@ const SiteDetailsView: React.FC<SiteDetailViewTypeProps> = (props) => {
             "
           >
             <tbody>
-              {siteDatas.map((siteData: SiteDataType) => (
+              {gridDatas.map((siteData: SiteDataType) => (
                 <tr
                   className="bg-white border-b"
                   key={siteData.label}

@@ -45,12 +45,13 @@ const Dashboard: React.FC<DashboardProps> = (props) => {
     <div>
       {isLoading && <Spinner />}
       {error && <Subtitle subtitle={error} />}
-      {sites && (
+      {sitesDatasForDay && (
         <div className="gap-y-10 flex flex-col content-stretch">
           <SitesCardsMainInfos sites={sites} />
           <SiteDetails
             sitesProcessor={sitesProcessor}
             sites={sites}
+            sitesDatasForDay={sitesDatasForDay}
           />
         </div>
       )}
