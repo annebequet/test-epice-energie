@@ -45,3 +45,19 @@ npm run dev
 
 - Le fichier `fetch.ts` contient des fonctions simulant des requêtes asynchrones vers un backend fictif.
 - Le fichier `data.ts` contient les données à utiliser et peut être consulté pour en connaître le format. **Les constantes ne doivent pas être directement accédées par le code,** utiliser les fonctions de `fetch.ts` à la place.
+
+## Choses à améliorer
+
+### Design
+- Picker au style non harmonisé
+- Icons à diversifier
+- Design assez basique
+
+### Code
+- Mettre en place une CI
+- Plus systématiser les tests (notamment sur la classe)
+- Uniformiser le système d'appel 'aux APIS' : un hook a été créé pour fetch mais pas pour les promesses chaînées
+- Mettre en place une meilleure gestion des messages d'erreurs (composant dédié et réflexion plus poussée sur le message à afficher)
+- Réflexion à mener sur la classe SiteData
+- config du linter à étoffer et fixer le bug
+- Factoriser les infos liées au statut des sites
