@@ -1,38 +1,33 @@
 import React from "react";
 import HomeView from "./HomeView";
-import useFetchDatas from "../../common/useFetchDatas";
 import ApiSites from "../../features/sites/api";
+import useFetchDatas from "../../common/api/useFetchDatas";
 
 const HomeContainer: React.FC = () => {
     const {
-        data: sites,
+        datas: sites,
         error: sitesError,
         isLoading: isSitesLoading,
     } = useFetchDatas(ApiSites.getSites);
 
-    /* const date = new Date();
-
-    const today = useMemo(() => date, [
-        date.getDate(),
-        date.getFullYear(),
-        date.getMonth(),
-    ]);
+    const day = new Date();
 
     const {
-        data: dayData,
+        datas: dayData,
         error: dayDatasError,
         isLoading: isDayDatasLoading,
-    } = useFetchDatas(
-        ApiSites.getSiteDatasPerDay,
+    } = useFetchDatas(ApiSites.getSiteDatasPerDay(
         {
-            day: today,
             siteId: 1,
+            day,
         }
-    ); */
+    ));
 
     console.log(sites);
     console.log(sitesError);
     console.log(isSitesLoading);
+    console.log(dayData);
+
 
     return (
         <HomeView />

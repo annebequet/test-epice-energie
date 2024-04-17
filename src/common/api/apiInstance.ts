@@ -4,7 +4,7 @@ export const fetchData = async <T>(apiCall: () => Promise<T>): Promise<T> => {
   try {
     const data: T = await apiCall();
     return data;
-  } catch (error) {
-    throw new APIError('Error fetching data: ' + error);
+  } catch (error: any) {
+    throw new APIError(error.message);
   }
 };
